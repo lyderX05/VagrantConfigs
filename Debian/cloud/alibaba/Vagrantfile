@@ -69,10 +69,10 @@ Vagrant.configure("2") do |config|
        apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
        apt-get update
        apt-get install -y terraform
-       apt-get install -y ca-certificates curl apt-transport-https lsb-release gnupg curl
-       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-       unzip awscliv2.zip
-       sudo ./aws/install
+       apt-get install -y ca-certificates curl apt-transport-https lsb-release gnupg curl wget
+       wget https://aliyuncli.alicdn.com/aliyun-cli-linux-3.0.59-amd64.tgz
+       gunzip -c aliyun-cli-linux-3.0.59-amd64.tgz | tar xvf -
+       mv aliyun /usr/local/bin
     SHELL
   end
   
